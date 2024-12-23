@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/Jel1ySpot/conic"
-	zerobot "github.com/Jel1ySpot/gorobot/pkg/bot"
+	gorobot "github.com/Jel1ySpot/gorobot/pkg/bot"
 	"github.com/Jel1ySpot/gorobot/pkg/plugin"
 	"github.com/Jel1ySpot/gorobot/pkg/protocol_logger"
 	"github.com/LagrangeDev/LagrangeGo/client"
@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	configuration zerobot.Config
+	configuration gorobot.Config
 	configPath    = "./config.json"
 )
 
@@ -35,12 +35,12 @@ func main() {
 	}
 
 	// Create a logger instance
-	logger := zerobot.NewLogger("zerobot -> ")
+	logger := gorobot.NewLogger("gorobot -> ")
 
 	// Create QQClient instance
 	QQClient := client.NewClient(configuration.Account.Uin, configuration.Account.Password)
 
-	bot := zerobot.Bot{
+	bot := gorobot.Bot{
 		QQClient: QQClient,
 		Config:   configuration,
 		Logger:   logger,
